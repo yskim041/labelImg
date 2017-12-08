@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import codecs
 import os.path
@@ -45,9 +45,11 @@ __appname__ = 'labelImg'
 
 # Utility functions and classes.
 
+
 def have_qstring():
     '''p3/qt5 get rid of QString wrapper as py3 has native unicode str type'''
     return not (sys.version_info.major >= 3 or QT_VERSION_STR.startswith('5.'))
+
 
 def util_qt_strlistclass():
     return QStringList if have_qstring() else list
@@ -249,7 +251,7 @@ class MainWindow(QMainWindow, WindowMixin):
         create = action('Create\nRectBox', self.createShape,
                         'w', 'new', u'Draw a new Box', enabled=False)
         delete = action('Delete\nRectBox', self.deleteSelectedShape,
-                        'Delete', 'delete', u'Delete', enabled=False)
+                        'Backspace', 'delete', u'Delete', enabled=False)
         copy = action('&Duplicate\nRectBox', self.copySelectedShape,
                       'Ctrl+D', 'copy', u'Create a duplicate of the selected Box',
                       enabled=False)
@@ -454,6 +456,9 @@ class MainWindow(QMainWindow, WindowMixin):
         self.zoomWidget.valueChanged.connect(self.paintCanvas)
 
         self.populateModeActions()
+
+        # Remember previous shapes
+        self.prevShapes = None
 
     ## Support Functions ##
 
@@ -1305,12 +1310,14 @@ class MainWindow(QMainWindow, WindowMixin):
         if self.filePath is None:
             return
         if os.path.isfile(xmlPath) is False:
+            self.loadLabels(self.prevShapes)
             return
 
         tVocParseReader = PascalVocReader(xmlPath)
         shapes = tVocParseReader.getShapes()
         self.loadLabels(shapes)
         self.canvas.verified = tVocParseReader.verified
+        self.prevShapes = shapes
 
 
 def inverted(color):
