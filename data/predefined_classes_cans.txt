@@ -1,0 +1,13 @@
+person
+water_bottle
+can_coke
+can_diet_coke
+can_diet_coke_small
+can_diet_seven_up
+can_ginger_ale
+can_talking_rain_peach_nectarine
+can_dry_sparkling_vanilla_bean
+can_izze_fusions_lemon_lime
+can_sanpellegrino_blood_orange
+can_sanpellegrino_lemon
+can_sanpellegrino_clementine
