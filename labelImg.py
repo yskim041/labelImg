@@ -478,6 +478,7 @@ class MainWindow(QMainWindow, WindowMixin):
         if self.filePath and os.path.isdir(self.filePath):
             self.openDirDialog(dirpath=self.filePath)
 
+
     ## Support Functions ##
     def set_format(self, save_format):
         if save_format == 'PascalVOC':
@@ -1008,6 +1009,9 @@ class MainWindow(QMainWindow, WindowMixin):
                     self.loadPascalXMLByFilename(xmlPath)
                 elif os.path.isfile(txtPath):
                     self.loadYOLOTXTByFilename(txtPath)
+                else:
+                    self.loadLabels(self.prevShapes)
+                    print(self.prevShapes)
             else:
                 xmlPath = os.path.splitext(filePath)[0] + XML_EXT
                 txtPath = os.path.splitext(filePath)[0] + TXT_EXT
@@ -1015,6 +1019,9 @@ class MainWindow(QMainWindow, WindowMixin):
                     self.loadPascalXMLByFilename(xmlPath)
                 elif os.path.isfile(txtPath):
                     self.loadYOLOTXTByFilename(txtPath)
+                else:
+                    self.loadLabels(self.prevShapes)
+                    print(self.prevShapes)
 
             self.setWindowTitle(__appname__ + ' ' + filePath)
 
@@ -1375,7 +1382,6 @@ class MainWindow(QMainWindow, WindowMixin):
         if self.filePath is None:
             return
         if os.path.isfile(xmlPath) is False:
-            self.loadLabels(self.prevShapes)
             return
 
         self.set_format("PascalVOC")
