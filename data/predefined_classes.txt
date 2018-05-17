@@ -1,8 +1,8 @@
 apple
+apricot
 asparagus
 avocado
 banana
-green bean
 beef
 beetroot
 bell pepper
@@ -21,6 +21,7 @@ cottage cheese
 cucumber
 egg
 grape
+green bean
 hummus
 jello
 mashed potato
@@ -33,6 +34,7 @@ pasta
 peach
 pear
 pie
+plate
 pork
 potato
 raspberry
