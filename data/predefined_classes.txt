@@ -1,46 +1,14 @@
 apple
-asparagus
-avocado
+apricot
 banana
-green bean
-beef
-beetroot
 bell pepper
 blackberry
-bread
-broccoli
-cake
 cantalope
 carrot
-cauliflower
 celery
-cheese
 cherry tomato
-chicken
-cottage cheese
-cucumber
 egg
 grape
-hummus
-jello
-mashed potato
 melon
-mushroom
-noodle soup
-onion
-pancake
-pasta
-peach
-pear
-pie
-pork
-potato
-raspberry
-ravioli
-rice
-salad
-spaghetti
-squash
 strawberry
-tomato
-waffle
+plate
