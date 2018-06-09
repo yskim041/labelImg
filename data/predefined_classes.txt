@@ -1,12 +1,12 @@
 apple
 apricot
 banana
-bell pepper
+bell_pepper
 blackberry
 cantalope
 carrot
 celery
-cherry tomato
+cherry_tomato
 egg
 grape
 melon
